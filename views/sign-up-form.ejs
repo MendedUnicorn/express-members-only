@@ -1,0 +1,50 @@
+<%- include("partials/header", {title: "Sign Up", css: "sign-up.css"}) %> 
+<%- include("partials/navbar") %>
+<div class="content">
+    <h2>Sign Up</h2>
+    <% if(typeof member !== "undefined") { %>
+        <form action="" method="POST">
+            <label for="firstName">First Name</label>
+            <input name="firstName" placeholder="First Name" type="text" id="firstName" value="<%= member.firstName %>" />
+            <label for="lastName">Last Name</label>
+            <input name="lastName" placeholder="Last Name" type="text" id="lastName" value="<%= member.lastName %>"/>
+            <label for="email">E-mail</label>
+            <input name="email" placeholder="E-mail" type="email" id="email" value="<%= member.email %>" />
+            <label for="username">Username</label>
+            <input name="username" placeholder="username" type="text" id="username" value="<%= member.username %>" />
+            <label for="password">Password</label>
+            <input name="password" type="password" id="password" />
+            <label for="password-confirmation">Repeat Password</label>
+            <input name="password-confirmation" type="password" id="password-confirmation" />
+            <button>Sign Up</button>
+        </form>
+    <% } else { %> 
+    <form action="" method="POST">
+        <label for="firstName">First Name</label>
+        <input name="firstName" placeholder="First Name" type="text" id="firstName" value="<%= %>" />
+        <label for="lastName">Last Name</label>
+        <input name="lastName" placeholder="Last Name" type="text" id="lastName" />
+        <label for="email">E-mail</label>
+        <input name="email" placeholder="E-mail" type="email" id="email" />
+        <label for="username">Username</label>
+        <input name="username" placeholder="username" type="text" id="username" />
+        <label for="password">Password</label>
+        <input name="password" type="password" id="password" />
+        <label for="password-confirmation">Repeat Password</label>
+        <input name="password-confirmation" type="password" id="password-confirmation" />
+        <button>Sign Up</button>
+    </form>
+    <% } %>
+</div>
+
+<% if(typeof err !== "undefined") { %> 
+    <%- include("partials/error", {err:err}) %> 
+<% } %>
+<% if(typeof errors !== "undefined") { %> 
+    <% console.log(errors) %>
+    <% errors.forEach(error => { %>
+        <%- include("partials/error", {err:error.msg}) %> 
+
+  <%  }) %>
+<% } %>
+<%- include("partials/footer") %> 

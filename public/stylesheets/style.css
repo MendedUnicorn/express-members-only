@@ -1,0 +1,92 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00b7ff;
+}
+
+h1 a {
+  color: rgb(250, 192, 233);
+}
+
+header {
+  background-color: rgb(31, 31, 100);
+  padding: 0px 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+}
+nav {
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  padding: 10px 10px;
+  height: 100%;
+}
+
+a:hover {
+  background: rgb(250, 192, 233);
+  color: rgb(31, 31, 100);
+}
+h1 a:hover {
+  background-color: inherit;
+  color: rgb(250, 192, 233);
+}
+
+h2 {
+  margin: 50px auto;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+p {
+  color: white;
+}
+.user {
+  display: flex;
+  align-items: center;
+  padding-left: 50px;
+}
+
+.profile-pic {
+  padding: 10px;
+  height: 50px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+}
+
+.error-box {
+  border: 1px solid red;
+  width: 50%;
+  border-radius: 5px;
+  background-color: rgb(241, 137, 137);
+  margin: 10px auto;
+  font-weight: bold;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
+.error-box p {
+  color: rgb(131, 0, 0);
+}

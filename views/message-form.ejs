@@ -1,0 +1,35 @@
+<%- include("partials/header", {title: "New message", css: "sign-up.css"}) %> 
+<%- include("partials/navbar") %>
+<div class="content">
+    <h2>New message</h2>
+    <% if(typeof message !== "undefined") { %>
+        <form action="" method="POST">
+            <label for="title">Title</label>
+            <input name="title" placeholder="Title" type="text" id="title" value="<%= message.title %>" />
+            <label for="message">Message</label>
+            <textarea name="message" cols="30" rows="10" placeholder="Message" id="message" ><%= message.message %></textarea>
+            <button>Post</button>
+        </form>
+    <% } else { %> 
+    <form action="" method="POST">
+        <label for="title">Title</label>
+        <input name="title" placeholder="Title" type="text" id="title"  />
+        <label for="message">Message</label>
+        <textarea name="message"  cols="30" rows="10" placeholder="Message" id="message" value=""></textarea>
+        
+        <button>Post</button>
+    </form>
+    <% } %>
+</div>
+
+<% if(typeof err !== "undefined") { %> 
+    <%- include("partials/error", {err:err}) %> 
+<% } %>
+<% if(typeof errors !== "undefined") { %> 
+    <% console.log(errors) %>
+    <% errors.forEach(error => { %>
+        <%- include("partials/error", {err:error.msg}) %> 
+
+  <%  }) %>
+<% } %>
+<%- include("partials/footer") %> 

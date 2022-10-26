@@ -1,0 +1,17 @@
+<%- include("partials/header", {title: "Log In", css: "sign-up.css"}) %> 
+<%- include("partials/navbar")%>
+<% console.log(err) %>
+<div class="content">
+  <h2>Log In</h2>
+  <form action="/auth/log-in" method="POST">
+    <label for="username">Username</label>
+    <input name="username" placeholder="username" type="text" />
+    <label for="password">Password</label>
+    <input name="password" type="password" />
+    <button>Log In</button>
+  </form>
+</div>
+<% if(typeof err !== "undefined" && err.length !== 0) { %> 
+  <%- include("partials/error", {err: err}) %> 
+<% } %>
+<%- include("partials/footer") %> 

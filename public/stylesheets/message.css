@@ -1,0 +1,36 @@
+.message-card {
+  box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+  width: 40%;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: rgba(255, 248, 248, 0.562);
+  min-height: 200px;
+  display: grid;
+  grid-template-rows: 1fr 6fr 2fr;
+  row-gap: 10px;
+}
+
+.message-card p {
+  color: black;
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.content {
+}
+
+h3 {
+  padding-bottom: 10px;
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.info p {
+  font-size: 10px;
+  background-color: inherit;
+}
