@@ -2,6 +2,11 @@
   <h1><a href="/">The Finer Things Club</a></h1>
   <nav>
     <ul>
+      <% if(currentUser && !currentUser.membershipStatus) { %>
+        <a href="/auth/membership">
+          <li>Become a Member!</li>
+        </a>
+      <% } %>
       <% if(currentUser) { %>
         <a href="/message/create">
           <li>New Message</li>
