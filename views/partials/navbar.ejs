@@ -23,13 +23,16 @@
         <li>Sign Up</li>
       </a>
       <% } %> <% if(currentUser) {%>
-      <li class="user">
-        <img class="profile-pic" src="<%= currentUser.profilePic ?
-        currentUser.profilePic :
-        "https://img.freepik.com/free-photo/portrait-white-man-isolated_53876-40306.jpg?w=1380&t=st=1666531975~exp=1666532575~hmac=60b84bfa7db56acfe8dd2b0c505e5298816243345ca3e0e9d73310bd8228c047"
-        %>" alt="" />
-        <p>Hello, <%= currentUser.name %></p>
-      </li>
+      <a href="/profile">
+        <li class="user">
+          <img class="profile-pic" src="<%= currentUser.profilePic ?
+          currentUser.profilePic :
+          "https://img.freepik.com/free-photo/portrait-white-man-isolated_53876-40306.jpg?w=1380&t=st=1666531975~exp=1666532575~hmac=60b84bfa7db56acfe8dd2b0c505e5298816243345ca3e0e9d73310bd8228c047"
+          %>" alt="" />
+          <p>Hello, <%= currentUser.name %></p>
+        </li>
+      </a>      
+
       <% } %>
     </ul>
   </nav>

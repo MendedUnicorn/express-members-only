@@ -15,4 +15,12 @@ router.post('/log-in', auth.login_post);
 // Log out
 router.get('/log-out', auth.logout_get);
 
+// Membership
+router.get('/membership', auth.checkAuthenticated, auth.membership_get);
+router.post('/membership', auth.checkAuthenticated, auth.membership_post);
+
+// admin access
+router.get('/admin', auth.checkAuthenticated, auth.admin_get);
+router.post('/admin', auth.checkAuthenticated, auth.admin_post);
+
 module.exports = router;

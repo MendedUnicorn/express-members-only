@@ -11,6 +11,7 @@ const MemberSchema = new Schema(
     password: { type: String, required: true, maxLength: 100 },
     messages: [{ type: Schema.Types.ObjectId, ref: 'Message' }],
     membershipStatus: { type: Boolean, default: false },
+    isAdmin: { type: Boolean, default: false },
   },
   { timestamps: true }
 );

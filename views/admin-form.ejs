@@ -1,0 +1,16 @@
+<%- include("partials/header", {title: "Membership Access", css: "sign-up.css"}) %> 
+<%- include("partials/navbar")%>
+
+<div class="content">
+  <h2>Admin Access</h2>
+  <form action="" method="POST">
+    <label for="code"></label>
+    <input name="code" placeholder="Secret code" type="text" />
+    
+    <button>Become Admin</button>
+  </form>
+</div>
+<% if(typeof err !== "undefined" && err.length !== 0) { %> 
+  <%- include("partials/error", {err: err}) %> 
+<% } %>
+<%- include("partials/footer") %> 

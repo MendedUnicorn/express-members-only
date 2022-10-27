@@ -1,0 +1,16 @@
+<div class="message-card">
+    <div class="title-bar">
+        <h3><%= message.title %></h3>
+         <% if(isAdmin) { %>
+            <form action="/message/delete" method="POST">
+                <input type="text" hidden name="id" value="<%=message._id%>">
+                <button>X</button>
+            </form>
+        <%} %> 
+    </div>
+    <p><%= message.message %></p>
+    <div class="info">
+        <p>Posted by: <%= message.creator.username%></p>
+        <p>Created at: <%= message.createTime %></p>
+    </div>
+</div>

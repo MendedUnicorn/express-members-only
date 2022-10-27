@@ -1,0 +1,19 @@
+<%- include("partials/header", {title: "Profile", css: "message.css"}) %>
+<%- include("partials/navbar") %>
+
+<div class="content">
+    <h2>Profile</h2>
+    <h3>Hello, <%= user.name %></h3>
+    <p>You became a member on <%= memberDate %></p>
+    <p>that was <%= membershipLength %></p>
+    <a href="/auth/admin"></a>
+
+    <h4>Messages:</h4>
+    <% if(typeof messages !== "undefined") { %>
+        <% messages.forEach(message => { %>
+            <%- include("partials/message-card", {message, isAdmin: currentUser.isAdmin}) %>
+        <% }) %>
+    <% } %>
+            
+</div>
+<%- include("partials/footer") %>

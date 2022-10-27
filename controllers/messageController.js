@@ -44,7 +44,6 @@ exports.message_create_post = [
 exports.message_update_get = (req, res, next) => {};
 exports.message_update_post = (req, res, next) => {};
 exports.message_delete_get = (req, res, next) => {};
-exports.message_delete_post = (req, res, next) => {};
 
 exports.message_detail = (req, res, next) => {};
 
@@ -70,4 +69,17 @@ exports.message_list = (req, res, next) => {
 
       res.render('secret', { messages });
     });
+};
+
+exports.message_delete = (req, res, next) => {
+  if (req.user.isAdmin) {
+    console.log(req.body.id);
+    Message.findByIdAndDelete(req.body.id, (err, doc) => {
+      if (err) {
+        return next(err);
+      }
+      console.log('delted: ', doc);
+      res.redirect('/');
+    });
+  }
 };
